@@ -12,8 +12,12 @@ export const validate = (schema, source = 'body') => {
       return errorResponse(res, 422, 'Validation failed', 'VALIDATION_ERROR', errors);
     }
 
-    // Replace req object with validated value (handles defaults)
-    req[source] = value;
+    // req.query is read-only in Express 5, so store validated query separately
+    if (source === 'query') {
+      req.validatedQuery = value;
+    } else {
+      req[source] = value;
+    }
     next();
   };
 };

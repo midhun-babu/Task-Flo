@@ -1,22 +1,22 @@
 :root {
-  /* Dark Mode Palette */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: rgba(20, 20, 30, 0.6);
-  --bg-glass: rgba(255, 255, 255, 0.03);
-  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  /* Light Mode Palette */
+  --bg-primary: #f8fafc;
+  --bg-secondary: rgba(255, 255, 255, 0.6);
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-hover: rgba(255, 255, 255, 0.8);
   
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
   
   --accent-color: #6366f1; /* Indigo */
   --accent-hover: #4f46e5;
-  --accent-glow: rgba(99, 102, 241, 0.4);
+  --accent-glow: rgba(99, 102, 241, 0.2);
   
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --danger-color: #ef4444;
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --danger-color: #dc2626;
 
-  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(0, 0, 0, 0.1);
   --border-focus: rgba(99, 102, 241, 0.5);
 
   --radius-sm: 8px;
@@ -115,7 +115,7 @@ body {
 .input-field {
   width: 100%;
   padding: 14px 16px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-primary);
@@ -128,7 +128,7 @@ body {
   outline: none;
   border-color: var(--border-focus);
   box-shadow: 0 0 0 4px var(--accent-glow);
-  background: rgba(0, 0, 0, 0.4);
+  background: #ffffff;
 }
 
 .btn {
@@ -203,7 +203,7 @@ h1, h2, h3 {
   letter-spacing: -0.5px;
 }
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -313,7 +313,7 @@ h1, h2, h3 {
 
 .task-card {
   padding: 20px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.7);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -323,9 +323,9 @@ h1, h2, h3 {
 }
 .task-card:hover {
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.15);
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
 }
 .task-card::before {
   content: '';
@@ -370,9 +370,10 @@ h1, h2, h3 {
   text-transform: uppercase;
   font-size: 0.7rem;
 }
-.priority-low { background: rgba(16, 185, 129, 0.1); color: var(--success-color); }
-.priority-medium { background: rgba(245, 158, 11, 0.1); color: var(--warning-color); }
-.priority-high { background: rgba(239, 68, 68, 0.1); color: var(--danger-color); }
+.priority-low      { background: rgba(5,  150, 105, 0.1); color: var(--success-color); }
+.priority-medium   { background: rgba(217,119,  6, 0.1); color: var(--warning-color); }
+.priority-high     { background: rgba(220, 38, 38, 0.1); color: var(--danger-color);  }
+.priority-critical { background: rgba(139,  0,  0, 0.15); color: #9b1c1c; font-weight:800; }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {

@@ -1,4 +1,3 @@
-import './style.css';
 import { api } from './api.js';
 import { renderAuth } from './auth.js';
 import { renderDashboard } from './dashboard.js';

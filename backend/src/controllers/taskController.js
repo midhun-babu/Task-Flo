@@ -10,7 +10,8 @@ import { successResponse } from '../utils/response.js';
 
 export const getAllTasks = async (req, res, next) => {
   try {
-    const { tasks, pagination } = await getTasks(req.user, req.query);
+    const queryData = req.validatedQuery || req.query;
+    const { tasks, pagination } = await getTasks(req.user, queryData);
     return successResponse(res, 200, tasks, pagination);
   } catch (error) {
     next(error);

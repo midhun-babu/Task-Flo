@@ -1,4 +1,5 @@
 import { register, login } from '../services/authService.js';
+import { findUserById } from '../dbqueries/userQueries.js';
 import { successResponse } from '../utils/response.js';
 
 export const registerUser = async (req, res, next) => {
@@ -51,7 +52,12 @@ export const logoutUser = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
   try {
-    return successResponse(res, 200, { user: req.user });
+    // req.user is the JWT payload { id, role } — fetch the full user record from DB
+    const user = await findUserById(req.user.id);
+    if (!user) {
+      return next(Object.assign(new Error('User not found'), { code: 'USER_NOT_FOUND' }));
+    }
+    return successResponse(res, 200, { user });
   } catch (error) {
     next(error);
   }

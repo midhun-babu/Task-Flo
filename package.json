@@ -1,0 +1,12 @@
+{
+  "name": "task-flo",
+  "version": "1.0.0",
+  "description": "Task-Flo monorepo scripts",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev --prefix backend",
+    "start": "npm run start --prefix backend",
+    "seed": "node backend/seed.js",
+    "reminder": "node backend/scripts/reminder.js"
+  }
+}
